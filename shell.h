@@ -60,6 +60,11 @@ void creat_envi(char **envi);
 int check_cmd(char **tokens, char *line, int count, char **argv);
 void treat_file(char *line, int counter, FILE *fd, char **argv);
 void exit_bul_for_file(char **cmd, char *line, FILE *fd);
+void _handle_exit(char **u_tokns, char *line);
+int execBuiltInCommands(char **u_tokns, char *line);
+void frees_get_env(char *env_path);
+void frees_tokens(char **tokns);
+
 
 /** BUILT IN FUNCTIONS **/
 
