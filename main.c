@@ -1,4 +1,4 @@
-#include "main.h"
+#include "shell.h"
 
 /**
  * 1 - display the environments variables
