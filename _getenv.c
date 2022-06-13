@@ -1,7 +1,10 @@
 #include "shell.h"
 #include <stddef.h>
-
-extern char **environ;
+/**
+ * _getenv - ..
+ * @name: ...
+ * Return: NULL
+ */
 
 char *_getenv(const char *name)
 {
