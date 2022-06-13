@@ -1,6 +1,12 @@
 #include "shell.h"
 #include <sys/stat.h>
 
+/**
+ * file_exists - ...
+ * @filepath: ...
+ * Return: 0 if success
+ */
+
 int file_exists(const char *filepath)
 {
 	struct stat buffer;
