@@ -1,5 +1,11 @@
 #include "shell.h"
 
+/**
+ * locate - locates files
+ * name: ...
+ * Return: return file path.
+ */
+
 char *locate(const char *name)
 {
 	char *path = _getenv("PATH");
