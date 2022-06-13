@@ -13,7 +13,7 @@ char *locate(const char *name)
 
 	strtok(path, "=");
 	dir_path = strtok(NULL, ":");
-	while(dir_path)
+	while (dir_path)
 	{
 		file_path = join_paths('/', dir_path, name);
 		if (file_exists(file_path))
