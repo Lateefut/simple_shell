@@ -1,11 +1,11 @@
 #include "shell.h"
 
 /*
- * main - display the environments variables
+ * 1 - display the environments variables
  * 2 - get an env variable (_getenv)
  * 3 - searching an executable from the PATH env (locate)
  * 4 - simple shell (show case)
- * main - write to a void
+ * main - write void
  * Return: 0 if successful
  */
 
