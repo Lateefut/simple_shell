@@ -1,6 +1,11 @@
 #include "shell.h"
 #include <stdlib.h>
 
+/**
+ * _strdup - string
+ * @str: ...
+ * Return: ...
+ */
 char *_strdup(const char *str)
 {
 	size_t i = 0;
