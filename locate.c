@@ -2,7 +2,7 @@
 
 /**
  * locate - locates files
- * name: ...
+ * @name: ...
  * Return: return file path.
  */
 
