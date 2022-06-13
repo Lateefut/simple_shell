@@ -7,9 +7,9 @@ char *_strdup(const char *str)
 	size_t len = 0;
 	char *_str = NULL;
 
-	while(str[i++])
+	while (str[i++])
 		;
-	len =+ i;
+	len += i;
 
 	_str = malloc(sizeof(*_str) * (len + 1));
 
