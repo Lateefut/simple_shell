@@ -1,13 +1,12 @@
 #include "shell.h"
 
 /**
+ * main - void function
  * 1 - display the environments variables
  * 2 - get an env variable (_getenv)
  * 3 - searching an executable from the PATH env (locate)
  * 4 - simple shell (show case)
  */
-
-extern char **environ;
 
 int main(void)
 {
@@ -29,7 +28,8 @@ int main(void)
 			args[0] = cmd_path;
 			if (fork() == 0)
 				execve(*args, args, NULL);
-			else {
+			else
+			{
 				wait(NULL);
 				free(cmd_path);
 				cmd_path = NULL;
