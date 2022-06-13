@@ -1,5 +1,13 @@
-#ifndef _MAIN_H_
-#define _MAIN_H
+#ifndef SHELL_H
+#define SHELL_H
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <stddef.h>
+#include <sys/stat.h>
+#include <string.h>
+#include <sys/wait.h>
 
 char *_getenv(const char *name);
 char *locate(const char *name);
