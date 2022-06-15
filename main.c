@@ -1,42 +1,48 @@
 #include "shell.h"
 
-/*
- * main - entry point to the shell
- *
- * @main - ....
- * Return: Always zero.
- */
-
+/**
+  * main - Entry point to the Shell
+  *
+  * Return: Always zero.
+  */
 int main(void)
 {
-	char *cmd = NULL;
-	char *args[] = {NULL, NULL};
-	size_t buff_size = 0;
-	ssize_t n_read = 0;
-	char *cmd_path = NULL;
+	char *line = NULL, **u_tokns = NULL;
+	int w_len = 0, execFlag = 0;
+	size_t line_size = 0;
+	ssize_t line_len = 0;
 
-	while (1)
+	while (line_len >= 0)
 	{
-		printf("Enter Command: ");
-		n_read = getline(&cmd, &buff_size, stdin);
-		cmd[n_read - 1] = '\0';
-
-		cmd_path = locate(cmd);
-		if (cmd_path)
+		signal(SIGINT, signal_handler);
+		if (isatty(STDIN_FILENO))
+			write(STDOUT_FILENO, "($) ", 4);
+		line_len = getline(&line, &line_size, stdin);
+		if (line_len == -1)
 		{
-			args[0] = cmd_path;
-			if (fork() == 0)
-				execve(*args, args, NULL);
-			else
-			{
-				wait(NULL);
-				free(cmd_path);
-				cmd_path = NULL;
-			};
+			if (isatty(STDIN_FILENO))
+				write(STDOUT_FILENO, "\n", 1);
+			break;
 		}
-		else
-			dprintf(STDERR_FILENO, "%s: Command not found\n", cmd);
+
+		w_len = count_input(line);
+		if (line[0] != '\n' && w_len > 0)
+		{
+			u_tokns = tokenize(line, " \t", w_len);
+			execFlag = execBuiltInCommands(u_tokns, line);
+			if (!execFlag)
+			{
+				u_tokns[0] = find(u_tokns[0]);
+				if (u_tokns[0] && access(u_tokns[0], X_OK) == 0)
+					exec(u_tokns[0], u_tokns);
+				else
+					perror("./hsh");
+			}
+
+			frees_tokens(u_tokns);
+		}
 	}
 
+	free(line);
 	return (0);
 }
