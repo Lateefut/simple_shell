@@ -1,6 +1,7 @@
 #include "shell.h"
 
-/**concat_path - concatenate a path name and a program name
+/**
+ * concat_path - concatenate a path name and a program name
  * @pathname: the path name to concatenate with the program name
  * @progname: the program name to place in the path name
  *
