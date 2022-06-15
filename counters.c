@@ -7,9 +7,10 @@
  * Return: the number of words found in the string
  */
 
-int count_input (char *str)
+int count_input(char *str)
 {
 	int i = 0, cw = 0, state = 0;
+
 	while (str[i])
 	{
 		if (str[i] == ' ' || str[i] == '\n' || str[i] == '\t')
