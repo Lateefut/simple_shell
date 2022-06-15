@@ -1,12 +1,9 @@
 #include "shell.h"
 
 /*
- * 1 - display the environments variables
- * 2 - get an env variable (_getenv)
- * 3 - searching an executable from the PATH env (locate)
- * 4 - simple shell (show case)
- * main - write void
- * Return: 0 if successful
+ * main - entry point to the shell
+ *
+ * Return: Always zero.
  */
 
 int main(void)
