@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
-  * frees_get_env - ...
+  * frees_get_env - .....i
   * @env_path: The environment variable to frees
   *
   * Return: Nothing to returns
