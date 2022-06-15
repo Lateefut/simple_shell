@@ -10,6 +10,7 @@
 #include <sys/wait.h>
 
 extern char **environ;
+int main(void);
 char *_getenv(const char *name);
 char *locate(const char *name);
 char *join_paths(const char sep, const char *path1, const char *path2);
