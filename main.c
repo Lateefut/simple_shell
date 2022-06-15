@@ -3,6 +3,7 @@
 /*
  * main - entry point to the shell
  *
+ * @main - ....
  * Return: Always zero.
  */
 
